@@ -8,7 +8,7 @@ on:
 jobs:
   include:
     name: Update Version
-    template: .github/actions/sub-action.yml
+    runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/develop' || github.event_name == 'push' && github.ref == 'refs/heads/master'
     steps:
       - name: Update version
