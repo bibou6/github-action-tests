@@ -10,3 +10,6 @@ jobs:
     name: Update Version
     template: .github/actions/sub-action.yml
     if: github.event_name == 'push' && github.ref == 'refs/heads/develop' || github.event_name == 'push' && github.ref == 'refs/heads/master'
+    steps:
+      - name: Update version
+        uses: .github/actions/sub-action.yaml
