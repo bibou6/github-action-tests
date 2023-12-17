@@ -12,4 +12,4 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/develop' || github.event_name == 'push' && github.ref == 'refs/heads/master'
     steps:
       - name: Update version
-        uses: .github/actions/sub-action.yaml
+        uses: ./.github/actions/sub-action.yaml
