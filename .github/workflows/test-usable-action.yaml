@@ -13,12 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Find where I am
-        run: |
-          pwd
-          ls -la
-          ls -la ../
-          ls -la ./.github/workflows/update-version/
-
       - name: Update version
-        uses: ./.github/workflows/update-version/
+        uses: ./.github/actions/update-version/
+  
+  deploy:
+    uses: ./.github/workflows/reusable-workflow.yaml
+    with: 
+      environment: dev
