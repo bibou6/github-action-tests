@@ -12,5 +12,6 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/develop' || github.event_name == 'push' && github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
+
       - name: Update version
-        uses: ./.github/actions/sub-action.yaml
+        uses: ./.github/workflows/actions/sub-action.yaml
