@@ -13,5 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Find where I am
+        run: |
+          pwd
+          ls -la
+          ls -la ../
+
       - name: Update version
         uses: ./.github/workflows/actions/sub-action.yaml
