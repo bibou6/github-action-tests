@@ -7,13 +7,6 @@ on:
 
 jobs:
   include:
-    - name: Update Version
-      template: .github/actions/sub-action.yml
-      if: github.event_name == 'push' && github.ref == 'refs/heads/develop' || github.event_name == 'push' && github.ref == 'refs/heads/master'
-
-    - name: Build and Deploy Dev
-      runs-on: ubuntu-latest
-      steps:
-        - name: Run echo
-          run: |
-            echo "test actions"
+    name: Update Version
+    template: .github/actions/sub-action.yml
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop' || github.event_name == 'push' && github.ref == 'refs/heads/master'
