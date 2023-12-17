@@ -18,6 +18,7 @@ jobs:
           pwd
           ls -la
           ls -la ../
+          ls -la ./.github/workflows/actions/sub-action.yaml
 
       - name: Update version
         uses: ./.github/workflows/actions/sub-action.yaml
