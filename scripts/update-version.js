@@ -5,8 +5,8 @@ const { execSync } = require('child_process');
 const versionData = JSON.parse(fs.readFileSync('version.json', 'utf8'));
 
 // Check which component has changes
-const isBackendChanged = execSync('git diff --name-only HEAD^ backend/').toString().trim() !== '';
-const isFrontendChanged = execSync('git diff --name-only HEAD^ frontends/').toString().trim() !== '';
+// const isBackendChanged = execSync('git diff --name-only HEAD^ backend/').toString().trim() !== '';
+// const isFrontendChanged = execSync('git diff --name-only HEAD^ frontends/').toString().trim() !== '';
 
 // Update the version based on changes
   versionData.test = incrementVersion(versionData.test);
