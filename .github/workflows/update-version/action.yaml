@@ -3,6 +3,7 @@ description: This should update project versions
 author: Adrien Durot
 
 runs:
+  using: "composite"
   steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -13,12 +14,15 @@ runs:
         node-version: "14"
 
     - name: Install dependencies
+      shell: bash
       run: npm install
 
     - name: Update Version
+      shell: bash
       run: npm run update-version
 
     - name: Commit and push version changes
+      shell: bash
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
