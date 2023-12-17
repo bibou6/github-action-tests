@@ -1,0 +1,24 @@
+runs-on: ubuntu-latest
+
+steps:
+  - name: Checkout code
+    uses: actions/checkout@v2
+
+  - name: Set up Node.js
+    uses: actions/setup-node@v3
+    with:
+      node-version: "14"
+
+  - name: Install dependencies
+    run: npm install
+
+  - name: Update Version
+    run: npm run update-version
+
+  - name: Commit and push version changes
+    run: |
+      git config --local user.email "action@github.com"
+      git config --local user.name "GitHub Action"
+      git add version.json
+      git commit -m "Update version numbers [skip ci]"
+      git push

@@ -1,0 +1,16 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  include:
+    - name: Update Version
+      template: .github/actions/update-version.yml
+      if: github.event_name == 'push' && github.ref == 'refs/heads/develop' || github.event_name == 'push' && github.ref == 'refs/heads/master'
+
+    - name: Build and Deploy Dev
+      run: |
+        echo "worked"
