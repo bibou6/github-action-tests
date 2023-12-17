@@ -17,6 +17,7 @@ jobs:
         uses: ./.github/actions/update-version/
   
   deploy:
+    needs: [include]
     uses: ./.github/workflows/reusable-workflow.yaml
     with: 
       environment: dev
